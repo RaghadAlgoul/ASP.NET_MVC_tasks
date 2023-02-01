@@ -1,0 +1,25 @@
+﻿@model List<MVC_Task2.Models.Student>
+@{
+    ViewBag.Title = "Student";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<h2>Student</h2>
+<br />
+<table  class="table">
+    <tr>
+        <th> ID</th>
+        <th>Name</th>
+        <th>Major</th>
+        <th>Faculty</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Name</td>
+            <td>@item.Major</td>
+            <td>@item.Faculty</td>
+        </tr>
+
+    }
+</table>
