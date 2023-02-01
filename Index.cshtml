@@ -1,61 +1,45 @@
-﻿@model IEnumerable<taskMVC.Models.Product>
-<link href="~/Content/bootstrap.css" rel="stylesheet" />
+﻿@model IEnumerable<taskMVC.Models.Category>
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table table-dark table-hover">
+<table class="table">
     <tr>
         <th>
-           Name
+            @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            Description
+            @Html.DisplayNameFor(model => model.ImageCategory)
         </th>
         <th>
-            Price
-        </th>
-        <th>
-            Quantity
-        </th>
-        
-        <th>
-            Category Name
+            @Html.DisplayNameFor(model => model.descriptions)
         </th>
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.quantity)
-            </td>
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.Name)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.product_ID },new { @class="btn btn-success" }) |
-                @Html.ActionLink("Details", "Details", new { id = item.product_ID }, new { @class = "btn btn-primary" }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.product_ID }, new { @class = "btn btn-danger" })
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageCategory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descriptions)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Category_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Category_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Category_ID })
+        </td>
+    </tr>
+}
 
 </table>
