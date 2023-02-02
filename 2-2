@@ -1,0 +1,96 @@
+
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Product</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label class="control-label col-md-2" name="Name">Name</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" name="Name" />
+            <span name="Name" class="field-validation-valid text-danger"></span>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" name="Category_ID">Category ID</label>
+        <div class="col-md-10">
+            <select name="Category_ID" class="form-control">
+                <option value="1">Laundry</option>
+                <option value="2">Dish Cleaner</option>
+                <option value="3">All-purpose Cleaner</option>
+                <option value="4">disCount</option>
+            </select>
+            <span name="Category_ID" class="field-validation-valid text-danger"></span>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2" name="description">Description</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" name="description" />
+            <span name="description" class="field-validation-valid text-danger"></span>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" name="price">Price</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" name="price" />
+            <span name="Name" class="field-validation-valid text-danger"></span>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" name="quantity">Quantity</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" name="quantity" />
+            <span name="quantity" class="field-validation-valid text-danger"></span>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" name="ImageProduct">Product Image</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" name="ImageProduct" />
+            <span name="ImageProduct" class="field-validation-valid text-danger"></span>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" name="newPrice">New Price</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" name="newPrice" />
+            <span name="newPrice" class="field-validation-valid text-danger"></span>
+
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    <a href="Index">Back to List </a>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
